@@ -11,8 +11,9 @@
 </p>
 
 <p>
-  <strong>Professor:</strong>
-  <%= @office.professor_id %>
+  <strong>Professor Name:</strong>
+  <%= @office.professor.first_name %>
+  <%= @office.professor.last_name %>
 </p>
 
 <%= link_to 'Edit', edit_office_path(@office) %> |
