@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-addedProfessortable
   resources :assignments
   resources :offices
   resources :professors

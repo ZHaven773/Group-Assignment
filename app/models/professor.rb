@@ -1,4 +1,5 @@
 class Professor < ApplicationRecord
     has_many :offices
-
+    has_many :assignments
+    has_many :courses, through: :assignments
 end
