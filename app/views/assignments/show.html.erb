@@ -8,12 +8,12 @@
   
 <p>
   <strong>Professor:</strong>
-  <%= @assignment.professor_id %>
+  <%= @assignment.professor.last_name %>
 </p>
 
 <p>
   <strong>Course:</strong>
-  <%= @assignment.course_id %>
+  <%= @assignment.course.name %>
 </p>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
