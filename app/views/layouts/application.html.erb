@@ -5,11 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div id="main">
+      <div id="header">
+      <h1>Professor and Offices</h1>
+      <%= link_to  "Professors", professors_path %>
+      <%= link_to  "Offices", offices_path %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
