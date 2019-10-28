@@ -9,8 +9,26 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+ActiveRecord::Schema.define(version: 2019_10_24_015102) do
 
-ActiveRecord::Schema.define(version: 2019_10_24_014103) do
+  create_table "offices", force: :cascade do |t|
+    t.string "building"
+    t.string "room_number"
+    t.integer "professor_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["professor_id"], name: "index_offices_on_professor_id"
+  end
+
+  create_table "professors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "department"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "offices", "professors"
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -19,5 +37,4 @@ ActiveRecord::Schema.define(version: 2019_10_24_014103) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-
 end
